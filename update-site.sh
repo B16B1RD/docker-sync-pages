@@ -34,7 +34,7 @@ else
   "
 fi
 
-if [ -x /usr/local/bin/hugo ]; then
+if [ -n ${HUGO} ] && [ -x /usr/local/bin/hugo ]; then
   /usr/local/bin/hugo -s ${CLONEDIR}/${GITHUB_BRANCH}
 fi
 
