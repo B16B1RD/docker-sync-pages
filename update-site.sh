@@ -11,6 +11,10 @@ if [ -z ${GITHUB_BRANCH} ]; then
   GITHUB_BRANCH=master
 fi
 
+if [ "${GITHUB_PUBLISHDIR}" = "/" ]; then
+  GITHUB_PUBLISHDIR=""
+fi
+
 if [ ! -e ${CLONEDIR} ]; then
   mkdir -p ${CLONEDIR}
 fi
