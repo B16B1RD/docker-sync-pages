@@ -1,11 +1,11 @@
 FROM asakaguchi/ngx-mruby
 
-ENV HUGO_VERSION 0.14
+ENV HUGO_VERSION 0.15
 
 RUN apk --update add sudo curl expect rsync \
   && curl -SLO "https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux_amd64.tar.gz" \
   && tar -xzf "hugo_${HUGO_VERSION}_linux_amd64.tar.gz" \
-  && mv hugo_${HUGO_VERSION}_linux_amd64/hugo_0.14_linux_amd64 /usr/local/bin/hugo \
+  && mv hugo_${HUGO_VERSION}_linux_amd64/hugo_${HUGO_VERSION}_linux_amd64 /usr/local/bin/hugo \
   && mkdir -m 775 /usr/local/src \
   && chgrp daemon /usr/local/src \
   && chgrp -R daemon /usr/share/nginx/html \
